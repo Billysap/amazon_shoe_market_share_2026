@@ -399,8 +399,7 @@ sourcing or competitive analysis in the footwear category on Amazon US.</p>
       and dims all others. This links the two views directly so you can see where
       a brand sits on price and demand with one click.</li>
   <li><b>Sidebar filters</b> (brand, subcategory, size, price, rating) cascade
-      across all four charts simultaneously — following the dynamic query
-      technique from Shneiderman (1994).</li>
+      across all four charts simultaneously.</li>
 </ul>
 
 <h4>Demand estimation</h4>
