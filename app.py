@@ -416,10 +416,6 @@ Estimated values are flagged in hover tooltips.</p>
   <li>Keepa Product Finder — Amazon US, Clothing/Shoes/Jewelry, Apr 2026,
       10,000 ASINs</li>
   <li>He & Hollenbeck (2020). <i>Sales and Rank on Amazon.com.</i> SSRN 3728281.</li>
-  <li>Chevalier & Goolsbee (2003). <i>Measuring Prices and Price Competition
-      Online.</i> NBER Working Paper.</li>
-  <li>Shneiderman (1994). Dynamic queries for visual information seeking.
-      IEEE Software.</li>
   <li>Plotly and Streamlit documentation.</li>
 </ul>
 
