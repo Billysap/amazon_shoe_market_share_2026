@@ -133,6 +133,11 @@ if sel_sizes:   df = df[df["Size"].isin(sel_sizes)]
 df = df[df["price"].between(*sel_price) | df["price"].isna()]
 df = df[df["rating"].ge(sel_rating)     | df["rating"].isna()]
 
+# ── Brushing state ────────────────────────────────────────────────────────────
+if "brush_brand" not in st.session_state:
+    st.session_state["brush_brand"] = None
+brush = st.session_state["brush_brand"]
+
 # ── Header ────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="hero">
@@ -267,6 +272,13 @@ with c2:
         st.rerun()
     st.markdown("</div>", unsafe_allow_html=True)
 
+# brushing label
+if brush:
+    st.info(
+        f"🎯 Highlighting **{brush}** in the scatter — click the same bar to clear",
+        icon="🔆",
+    )
+
 # ── Row 2: size stacked bar + bubble scatter ──────────────────────────────────
 c3, c4 = st.columns([0.52, 0.48])
 
@@ -277,7 +289,7 @@ with c3:
         unsafe_allow_html=True,
     )
     size_df = (
-        df[df["Size"].notna() & df["gender"].isin(["Women", "Men"])]
+        df[df["Size"].notna() & df["gender"].isin(["Men", "Women"])]
         .groupby(["size_str", "gender"])["monthly_sold"]
         .sum()
         .reset_index()
@@ -387,6 +399,7 @@ sourcing or competitive analysis in the footwear category on Amazon US.</p>
       across all four charts simultaneously.</li>
 </ul>
 
+
 <h4>Demand estimation</h4>
 <p>Amazon only shows "Bought in past month" for ~30% of products. For the rest,
 monthly units are estimated using a power-law model fit on 3,027 products that
@@ -409,7 +422,7 @@ Estimated values are flagged in hover tooltips.</p>
   <li>Exploratory analysis and power-law calibration — ~2.5 hrs</li>
   <li>Streamlit UI, charts logic — ~4 hrs</li>
   <li>Write-up and deployment — ~1.5 hrs</li>
-  <li><b>Total ~10 hrs.</b>
+  <li><b>Total ~10 hrs.</b> 
 </ul>
 
 </div>
