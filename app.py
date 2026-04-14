@@ -289,7 +289,7 @@ with c3:
         unsafe_allow_html=True,
     )
     size_df = (
-        df[df["Size"].notna() & df["gender"].isin(["Men", "Women"])]
+        df[df["Size"].notna() & df["gender"].isin(["Women", "Men"])]
         .groupby(["size_str", "gender"])["monthly_sold"]
         .sum()
         .reset_index()
