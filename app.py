@@ -133,11 +133,6 @@ if sel_sizes:   df = df[df["Size"].isin(sel_sizes)]
 df = df[df["price"].between(*sel_price) | df["price"].isna()]
 df = df[df["rating"].ge(sel_rating)     | df["rating"].isna()]
 
-# ── Brushing state ────────────────────────────────────────────────────────────
-if "brush_brand" not in st.session_state:
-    st.session_state["brush_brand"] = None
-brush = st.session_state["brush_brand"]
-
 # ── Header ────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="hero">
@@ -272,13 +267,6 @@ with c2:
         st.rerun()
     st.markdown("</div>", unsafe_allow_html=True)
 
-# brushing label
-if brush:
-    st.info(
-        f"🎯 Highlighting **{brush}** in the scatter — click the same bar to clear",
-        icon="🔆",
-    )
-
 # ── Row 2: size stacked bar + bubble scatter ──────────────────────────────────
 c3, c4 = st.columns([0.52, 0.48])
 
@@ -395,9 +383,6 @@ sourcing or competitive analysis in the footwear category on Amazon US.</p>
       whether high-value products are expensive, high-volume, or high-rated —
       three things that matter for sourcing. Bubble size encodes rating to avoid
       a fourth separate chart.</li>
-  <li><b>Brushing:</b> clicking any brand bar highlights that brand in the scatter
-      and dims all others. This links the two views directly so you can see where
-      a brand sits on price and demand with one click.</li>
   <li><b>Sidebar filters</b> (brand, subcategory, size, price, rating) cascade
       across all four charts simultaneously.</li>
 </ul>
@@ -422,9 +407,9 @@ Estimated values are flagged in hover tooltips.</p>
 <ul>
   <li>Data acquisition and Keepa export — ~1.5 hrs</li>
   <li>Exploratory analysis and power-law calibration — ~2.5 hrs</li>
-  <li>Streamlit UI, charts, brushing logic — ~4 hrs</li>
+  <li>Streamlit UI, charts logic — ~4 hrs</li>
   <li>Write-up and deployment — ~1.5 hrs</li>
-  <li><b>Total ~10 hrs.</b> Brushing and power-law validation took the most time.</li>
+  <li><b>Total ~10 hrs.</b>
 </ul>
 
 </div>
