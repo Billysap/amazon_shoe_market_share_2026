@@ -403,14 +403,6 @@ sourcing or competitive analysis in the footwear category on Amazon US.</p>
       technique from Shneiderman (1994).</li>
 </ul>
 
-<h4>Alternatives considered</h4>
-<ul>
-  <li>A treemap for market share — rejected because it hides the price axis.</li>
-  <li>A time series — rejected because the Keepa export is a snapshot only.</li>
-  <li>A choropleth map — rejected because Keepa does not provide geographic
-      breakdowns at product level.</li>
-</ul>
-
 <h4>Demand estimation</h4>
 <p>Amazon only shows "Bought in past month" for ~30% of products. For the rest,
 monthly units are estimated using a power-law model fit on 3,027 products that
