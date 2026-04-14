@@ -112,5 +112,3 @@ streamlit run app.py
 ## References
 
 - He, S. & Hollenbeck, B. (2020). *Sales and Rank on Amazon.com.* SSRN 3728281.
-- Chevalier, J. & Goolsbee, A. (2003). *Measuring Prices and Price Competition Online.*
-- Shneiderman, B. (1994). Dynamic queries for visual information seeking. IEEE Software.
